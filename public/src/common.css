@@ -1,0 +1,88 @@
+:root {
+	--bg-color: #f2f6f8;
+	--bg-color-second: #353b48;
+	--bg-color-third: #fff;
+	--primary-color: #9b51ef;
+	--primary-color-darker: #7935c5;
+	--secondary-color: #efbb51;
+	--third-color: #efbb51;
+	--primary-text-color: #333;
+	--secondary-text-color: #999;
+	--third-text-color: #fff;
+	--fourth-text-color: #ccc;
+	--gradient: linear-gradient(to bottom, #efbb51, #9b51ef);
+	--main-indent-negative: -40px;
+	--main-indent: 40px; /* основной отступ справа и слева */
+	--maximum-width: 1280px; /* максимальная ширина блока контента */
+}
+
+/* RESET, BASIC UI SETTINGS
+----------------------------------------------- */
+* {background: transparent; margin: 0; padding: 0; outline: none; border: 0; box-sizing: border-box;}
+ol, ul {list-style: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+img, table, iframe, video, frame, embed, object {max-width: 100%;}
+html {font-size: 62.5%;}
+body {font: 1.6rem 'Nunito', sans-serif; line-height: normal; padding: 0; margin: 0;        
+color: var(--primary-text-color); background: #111 url(/src/bg01.png); 
+min-height: 100%; width: 100%; font-weight: 400; letter-spacing: 0.02em;}
+a {color: var(--primary-text-color); text-decoration: none;}
+a:hover, a:focus {color: var(--primary-color); text-decoration: none;}
+h1, h2, h3, h4, h5 {font-weight: 700; font-size: 2.4rem;}
+::selection { background: #f6e58d; color: #000;}
+b, strong {font-weight: 600;}
+
+button, select, textarea, input[type="text"], input[type="password"], input[type="button"], input[type="submit"] 
+{appearance: none; -webkit-appearance: none; font-size: 1.6rem; font-family: 'Nunito' !important;}
+button:not(.color-btn):not([class*=fr]):not([class*=plyr]):not(.header__search-btn):not([class*=owl-]):not(.form__btn):not([id*=mceu]), 
+.button, .btn, input[type="button"]:not(.form__btn), input[type="reset"], input[type="submit"] {
+display: inline-block; cursor: pointer; text-align: center; padding: 0 20px; height: 40px; line-height: 40px;
+background-color: var(--primary-color); color:#fff; font-size: 1.2rem; font-weight: 700; white-space: nowrap;
+border-radius: 20px; box-shadow: 0 20px 50px rgba(155, 81, 239, 0.1); text-transform: uppercase;}
+button:not(.color-btn):not([class*=fr]):not([class*=plyr]):not(.header__search-btn):not([class*=owl-]):not(.form__btn):not([id*=mceu]):hover, 
+.button:hover, .btn:hover, input[type="button"]:not(.form__btn):hover, input[type="reset"]:hover, 
+input[type="submit"]:hover {background-color: var(--primary-color-darker); color: #fff; box-shadow: 0 10px 20px 0 rgba(0,0,0,0);}
+button:active, input[type="button"]:active, input[type="submit"]:active {box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.1);}
+
+input[type="text"], input[type="password"] {height: 40px; line-height: 40px; border-radius: 4px; padding: 0 15px;}
+select {height: 40px; padding: 0 15px; display: block;}
+select:not([multiple]) {background-image: url(../dleimages/chevron.svg); padding-right: 30px;
+	background-repeat: no-repeat; background-position: right 15px top 50%; background-size: .6em auto;}
+select option {padding: 6px 10px;}
+select[multiple] {padding: 0 5px;}
+textarea {padding: 15px; overflow: auto; vertical-align: top; resize: vertical;}
+input[type="text"], input[type="password"], select, textarea {width: 100%; background-color: #fff; color: #000; 
+box-shadow: inset 0 0 0 1px #e3e3e3, inset 1px 2px 5px rgba(0,0,0,0.1);}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus 
+{box-shadow: inset 0 0 0 1px var(--primary-color), inset 1px 2px 5px rgba(0,0,0,0.1);}
+input::placeholder, textarea::placeholder {color: #000; opacity: 0.6; font-size: 1.4rem;} 
+input:focus::placeholder, textarea:focus::placeholder {color: transparent}
+
+/* SNIPPETS
+----------------------------------------------- */
+.img-box, .img-wide, .img-responsive, .img-fit-cover {overflow: hidden; position: relative;}
+.img-responsive {padding-top: 60%;}
+.img-responsive--portrait {padding-top: 150%;}
+.img-box > img, .img-responsive > img {width: 100%; min-height: 100%; display: block;}
+.img-responsive > img {position: absolute; left: 0; top: 0;}
+.img-wide img, .img-wide > a {width: 100%; display: block;}
+.img-fit-cover img, .img-fit img {width: 100%; height: 100%; object-fit: cover;}
+.clr {clear: both;}
+.clearfix::after {content: ""; display: table; clear: both;}
+.ws-nowrap, .nowrap {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.d-flex, #dle-content, .fx-row, .fx-col {display: flex; flex-wrap: wrap; flex-direction: row;}
+.fd-column, .fx-col {flex-direction: column; flex-wrap: nowrap;} 
+.jc-flex-start, #dle-content {justify-content: flex-start;}
+.jc-space-between, .fx-row {justify-content: space-between;}
+.jc-center, .fx-center, .fx-col {justify-content: center;}
+.ai-flex-start {align-items: flex-start;}
+.ai-center, .fx-middle, .fx-col {align-items: center;}
+.order-first, .fx-first {order: -1;}
+.order-last, .fx-last {order: 10;}
+.stretch-free-width, .fx-1 {flex: 1 1 0; max-width: 100%; min-width: 50px;}
+.icon-at-left [class*="fa-"], .icon-left .icon {margin-right: 10px;}
+.icon-at-right [class*="fa-"], .icon-right .icon {margin-left: 10px;}
+.hidden, #dofullsearch, .form__header .form__btn {display: none;}
+.animated-element, button, .btn, .nav-list a, .inner-page__rating a {transition: all .3s;}
+
+#dle-content > *:not(.item), #dle-content {width: 100%;}
